@@ -20,36 +20,10 @@ async function readPdf(file) {
         }
 
         localStorage.setItem("pdfText", fullText);
-
-        // Send the text to the PHP endpoint
-        sendDataToServer(fullText);
     };
     
     fileReader.readAsArrayBuffer(file);
 }
-
-// Send data to PHP endpoint
-async function sendDataToServer(pdfText) {
-    try {
-        const response = await fetch('/LAMPAPI/promptSend.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'  // Sending JSON data
-            },
-            body: JSON.stringify({ text: pdfText })  // Send the extracted text as JSON
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const result = await response.json();
-        console.log('Success:', result);  // Log the response from the server
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
 
 // Handle file upload
 document.getElementById('pdf-upload').addEventListener('change', function(event) {

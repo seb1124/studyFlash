@@ -41,7 +41,7 @@ main .container{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 2px dotted #5E5DF0;
+    border: 2px solid #5E5DF0;
     border-radius: 8px;
     cursor: pointer;
 }

@@ -58,10 +58,10 @@ main .container:hover{
 .container h2{
     color: #aaa;
     font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 /* FOOTER */
-
 footer {
     display: flex;
     justify-content: center;

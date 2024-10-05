@@ -30,6 +30,7 @@ document.getElementById('pdf-upload').addEventListener('change', function(event)
     const file = event.target.files[0];
     if (file && file.type === "application/pdf") {
         readPdf(file);
+        window.location.href = 'flash.html'
     } else {
         alert("Please upload a valid PDF file.");
     }

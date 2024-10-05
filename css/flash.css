@@ -8,6 +8,9 @@
     z-index: 1;
 }
 
+a{
+    cursor: pointer;
+}
 /* UPLOAD PAGE */
 
 /* NAVBAR */
@@ -22,7 +25,90 @@ nav .title-text {
 }
 
 /* MAIN BODY */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}
 
+main div {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Flashcard box organizer */
+div .flash-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #5E5DF0;
+    width: 500px;
+    height: 500px;
+}
+
+div .flashcard-box{
+    width: 400px;
+    height: 250px;
+    border-radius: 8px;
+    border: 2px solid #5E5DF0;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+div .flashtext-div{
+    height: 80%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+div .refresh-div{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+}
+
+.refresh-div a{
+    margin-top: .75rem;
+    margin-right: .5rem;
+}
+
+.refresh-div a svg{
+    height: fit-content;
+    width: 20px;
+    color: #aaa;
+}
+
+div .flashcard-hint{
+    height: 10%;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.flashcard-hint h4{
+    color: #aaa;
+}
+
+div .arrow-buttons{
+    width: 50px;
+    height: 50px;
+}
+
+#forward-arrow svg{
+    transform: rotate(180deg);
+}
 
 /* FOOTER */
 footer {
@@ -40,24 +126,31 @@ footer h3 {
     color: #aaa;
 }
 
-/* Media Queries for Mobile */
-@media (max-width: 600px) {
-    nav{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media only screen and (max-width: 600px) {
+    
+    div .flash-container {
+        width: 100%;
+        min-width: 400px;
+        max-height: 300px;
+        height: auto;
+        flex-direction: column;
+    }
+
+    div .flashcard-box {
+        width: 100%;
+        max-width: none;
     }
 
     nav .title-text {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 
-    footer {
-        padding: 0.5rem;
-        height: auto;
+    .refresh-div a svg {
+        width: 1rem;
     }
 
-    footer h3 {
-        font-size: 0.875rem;
+    .arrow-buttons a svg{
+        width: 2rem;
     }
 }

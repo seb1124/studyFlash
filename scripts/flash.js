@@ -2,6 +2,10 @@ const apiBaseURL = "http://159.89.83.234/LAMPAPI";
 
 let curFlashcardIdx = 0;
 
+let flashcards;
+
+let toggle = 0;
+
 async function apiRequest(endpoint, method, body) {
     const response = await fetch(`${apiBaseURL}${endpoint}`, {
         method: method,
@@ -18,12 +22,11 @@ async function opneaiApiHandler(query = '') {
         pdfText: query
     };
 
-    const data = await apiRequest('/promptSend.php', 'POST', searchBody);
+    flashcards = await apiRequest('/promptSend.php', 'POST', searchBody);
 
-     if(data){
-         localStorage.setItem("data", data);
-         displayFlashcards(data)
-     }
+    if(flashcards){
+         displayFlashcards(flashcards);
+    }
 }
 
 function displayFlashcards(flashcards) {
@@ -32,15 +35,33 @@ function displayFlashcards(flashcards) {
 }
 
 document.querySelector("#forward-arrow").addEventListener("click", () => {
-    const data = localStorage.getItem("data");
-    if(curFlashcardIdx + 1 < data.length){
-        console.log("current flashcard index is " + curFlashcardIdx);
+    if(curFlashcardIdx < flashcards.length - 1) {
+        toggle = 0;
         curFlashcardIdx += 1;
-        displayFlashcards(data);
+        displayFlashcards(flashcards);
     }
 });
 
-opneaiApiHandler("this is sami he has green hair and red eyebrows. Mark drives a bugatti.");
+document.querySelector("#back-arrow").addEventListener("click", () => {
+    if(curFlashcardIdx > 0) {
+        toggle = 0;
+        curFlashcardIdx -= 1;
+        displayFlashcards(flashcards);
+    }
+});
+
+document.querySelector("#refresh").addEventListener("click", () => {
+    if(toggle === 0) {
+        toggle++;
+        document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].answer;
+    }
+    else {
+        toggle--;
+        document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].question;
+    }
+});
+
+opneaiApiHandler("Putin worked as a KGB foreign intelligence officer for 16 years, rising to the rank of lieutenant colonel before resigning in 1991 to begin a political career in Saint Petersburg. In 1996, he moved to Moscow to join the administration of President Boris Yeltsin. He briefly served as the director of the Federal Security Service (FSB) and then as secretary of the Security Council of Russia before being appointed prime minister in August 1999. Following Yeltsin's resignation, Putin became acting president and, in less than four months, was elected to his first term as president. He was reelected in 2004. Due to constitutional limitations of two consecutive presidential terms, Putin served as prime minister again from 2008 to 2012 under Dmitry Medvedev. He returned to the presidency in 2012, following an election marked by allegations of fraud and protests, and was reelected in 2018.");
 // Load stored text on page load
 async function loadStoredText() {
     const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage

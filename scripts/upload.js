@@ -1,15 +1,10 @@
-// Upload file handler
-
 // Function to read and parse the PDF file
 async function readPdf(file) {
-
-    localStorage.clear();
-
     const fileReader = new FileReader();
-    
+
     fileReader.onload = async function() {
         const typedarray = new Uint8Array(this.result);
-        
+
         // Load PDF document
         const pdf = await pdfjsLib.getDocument(typedarray).promise;
         const numPages = pdf.numPages;
@@ -24,28 +19,33 @@ async function readPdf(file) {
 
         localStorage.setItem("pdfText", fullText);
     };
-    
+
     fileReader.readAsArrayBuffer(file);
 }
 
-// Handle file upload
-document.getElementById('pdf-upload').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file && file.type === "application/pdf") {
-        readPdf(file);
-        window.location.href = 'flash.html'
-    } else {
-        alert("Please upload a valid PDF file.");
-    }
-});
+// Function to initialize event listeners
+function initializeListeners() {
+    document.getElementById('pdf-upload').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file && file.type === "application/pdf") {
+            readPdf(file);
+            window.location.href = 'flash.html';
+        } else {
+            alert("Please upload a valid PDF file.");
+        }
+    });
+}
 
 // Load stored text on page load
 function loadStoredText() {
     const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage
     if (storedText) {
-        console.log("Parsed PDF: " + storedText)
+        console.log("Parsed PDF: " + storedText);
     }
 }
 
 // Initialize on page load
-loadStoredText();
+document.addEventListener('DOMContentLoaded', function() {
+    initializeListeners();
+    loadStoredText();
+});

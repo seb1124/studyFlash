@@ -111,7 +111,16 @@ div .arrow-buttons{
     cursor: pointer;
 }
 
-.arrow-buttons a svg path {
+div .arrow-buttons svg path:hover{
+    stroke: #5E5DF0;
+    stroke-width: 2px;
+}
+
+.arrow-buttons svg{
+    overflow: visible;
+}
+
+.arrow-buttons svg path {
     cursor: pointer;
 }
 

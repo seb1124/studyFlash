@@ -119,9 +119,29 @@ footer h3 {
 }
 
 
-/* Background effect */
-body {
-    background: linear-gradient(135deg, #1a1a1a, #212121);
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+    main .container {
+        padding: 0.5rem; /* Reduce padding on smaller screens */
+    }
+
+    main h3 {
+        font-size: 1.25rem; /* Smaller h3 font size */
+    }
+
+    main h2 {
+        font-size: 1.5rem; /* Smaller h2 font size */
+    }
+
+    main .button {
+        font-size: 14px; /* Adjust button font size */
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .area{
@@ -245,29 +265,4 @@ body {
         border-radius: 50%;
     }
 
-}
-
-/* MEDIA QUERIES */
-@media (max-width: 600px) {
-    main .container {
-        padding: 0.5rem; /* Reduce padding on smaller screens */
-    }
-
-    main h3 {
-        font-size: 1.25rem; /* Smaller h3 font size */
-    }
-
-    main h2 {
-        font-size: 1.5rem; /* Smaller h2 font size */
-    }
-
-    main .button {
-        font-size: 14px; /* Adjust button font size */
-    }
-
-    nav{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }

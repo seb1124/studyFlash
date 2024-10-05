@@ -25,6 +25,9 @@ nav .title-text {
     z-index: 3;
 }
 
+nav a h1{
+    cursor: pointer;
+}
 /* MAIN BODY */
 main{
     display: flex;

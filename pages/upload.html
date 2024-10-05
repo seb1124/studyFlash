@@ -14,15 +14,18 @@
         <h1 class="title-text">StudyBuddy.ai</h1>
     </nav>
     <main>
-        <div class="container">
+        <div class="container" onclick="document.getElementById('pdf-upload').click();">
             <svg width="301" height="301" viewBox="0 0 301 301" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M131.542 225.5V72.3479L82.6833 121.206L56.375 93.9583L150.333 0L244.292 93.9583L217.983 121.206L169.125 72.3479V225.5H131.542ZM37.5833 300.667C27.2479 300.667 18.4033 296.99 11.0495 289.636C3.69569 282.282 0.0125278 273.431 0 263.083V206.708H37.5833V263.083H263.083V206.708H300.667V263.083C300.667 273.419 296.99 282.27 289.636 289.636C282.282 297.002 273.431 300.679 263.083 300.667H37.5833Z" fill="white"/>
             </svg>
-            <h2>PLEASE UPLOAD A PDF FILE</h2>
+            <input type="file" id="pdf-upload" style="display: none;" accept=".pdf" onchange="handleFileUpload(event)">
+            <h2>PLEASE UPLOAD A PDF FILE</h2>            
         </div>
     </main>
     <footer>
         <h3>© by StuddyBuddy 2024</h3>
     </footer>
+
+    <script src="/scripts/upload.js"></script>
 </body>
 </html>

@@ -2,6 +2,9 @@
 
 // Function to read and parse the PDF file
 async function readPdf(file) {
+
+    localStorage.clear();
+
     const fileReader = new FileReader();
     
     fileReader.onload = async function() {
@@ -30,6 +33,7 @@ document.getElementById('pdf-upload').addEventListener('change', function(event)
     const file = event.target.files[0];
     if (file && file.type === "application/pdf") {
         readPdf(file);
+        window.location.href = 'flash.html'
     } else {
         alert("Please upload a valid PDF file.");
     }

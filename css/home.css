@@ -9,6 +9,8 @@
 }
 
 /* HOME PAGE */
+
+/* NAVBAR */
 nav .title-text {
     text-decoration: underline;
     text-underline-offset: 8px;
@@ -19,6 +21,7 @@ nav .title-text {
     z-index: 3;
 }
 
+/* MAIN BODY */
 main {
     display: flex;
     align-items: center;
@@ -29,8 +32,9 @@ main {
 }
 
 main .container {
-    width: 400px;
-    height: 400px;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
     background-color: rgba(255, 255, 255, 0);
     display: flex;
     justify-content: center;
@@ -46,13 +50,14 @@ main h3 {
     font-weight: bold;
     font-size: 1rem;
     color: #fff;
-    margin: 3rem;
+    margin: 2.5rem;
     background-color: 0;
     z-index: 2;
 }
 
 main h2{
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
+    font-size: 1.25rem;
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -90,6 +95,7 @@ main .button:active {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* FOOTER */
 footer {
     display: flex;
     justify-content: center;
@@ -231,4 +237,29 @@ body {
         border-radius: 50%;
     }
 
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+    main .container {
+        padding: 0.5rem; /* Reduce padding on smaller screens */
+    }
+
+    main h3 {
+        font-size: 1.25rem; /* Smaller h3 font size */
+    }
+
+    main h2 {
+        font-size: 1.5rem; /* Smaller h2 font size */
+    }
+
+    main .button {
+        font-size: 14px; /* Adjust button font size */
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

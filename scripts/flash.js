@@ -2,6 +2,10 @@ const apiBaseURL = "http://159.89.83.234/LAMPAPI";
 
 let curFlashcardIdx = 0;
 
+let flashcards;
+
+let toggle = 0;
+
 async function apiRequest(endpoint, method, body) {
     const response = await fetch(`${apiBaseURL}${endpoint}`, {
         method: method,
@@ -18,12 +22,11 @@ async function opneaiApiHandler(query = '') {
         pdfText: query
     };
 
-    const data = await apiRequest('/promptSend.php', 'POST', searchBody);
+    flashcards = await apiRequest('/promptSend.php', 'POST', searchBody);
 
-     if(data){
-         localStorage.setItem("data", data);
-         displayFlashcards(data)
-     }
+    if(flashcards){
+         displayFlashcards(flashcards);
+    }
 }
 
 function displayFlashcards(flashcards) {
@@ -32,15 +35,34 @@ function displayFlashcards(flashcards) {
 }
 
 document.querySelector("#forward-arrow").addEventListener("click", () => {
-    const data = localStorage.getItem("data");
-    if(curFlashcardIdx + 1 < data.length){
-        console.log("current flashcard index is " + curFlashcardIdx);
+    if(curFlashcardIdx < flashcards.length - 1) {
+        toggle = 0;
         curFlashcardIdx += 1;
-        displayFlashcards(data);
+        displayFlashcards(flashcards);
     }
 });
 
-opneaiApiHandler("this is sami he has green hair and red eyebrows. Mark drives a bugatti.");
+document.querySelector("#back-arrow").addEventListener("click", () => {
+    if(curFlashcardIdx > 0) {
+        toggle = 0;
+        curFlashcardIdx -= 1;
+        displayFlashcards(flashcards);
+    }
+});
+
+document.querySelector("#refresh").addEventListener("click", () => {
+    if(toggle === 0) {
+        toggle++;
+        document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].answer;
+        document.querySelector("#flashcard-hint").classList.add("hidden");
+    }
+    else {
+        toggle--;
+        document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].question;
+        document.querySelector("#flashcard-hint").classList.remove("hidden");
+    }
+});
+
 // Load stored text on page load
 async function loadStoredText() {
     const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage
@@ -50,3 +72,5 @@ async function loadStoredText() {
     }
 }
 
+// Initialize on page load
+loadStoredText();

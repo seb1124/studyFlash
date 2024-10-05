@@ -26,6 +26,12 @@ nav .title-text {
     z-index: 3;
 }
 
+nav a{
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+}
+
 nav a h1{
     cursor: pointer;
 }
@@ -93,12 +99,7 @@ div .refresh-div{
     padding-top: 5px;
 }
 
-.refresh-div a{
-    cursor: pointer;
-    padding: 1px;
-}
-
-.refresh-div a svg{
+.refresh-div svg{
     height: fit-content;
     width: 20px;
     color: #aaa;
@@ -152,6 +153,10 @@ footer h3 {
     font-size: 1rem;
     padding-bottom: 0.5rem;
     color: #aaa;
+}
+
+.hidden{
+    display: none;
 }
 
 /* MEDIA QUERIES FOR RESPONSIVENESS */

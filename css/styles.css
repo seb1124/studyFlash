@@ -1,12 +1,100 @@
-*{
+* {
     background-color: #212121;
     color: #FFFFFF;
     font-family: "Roboto", sans-serif;
+    cursor: default;
+    margin: 0;
+    padding: 0;
 }
 
 /* HOME PAGE */
-/* UPLOAD PAGE */
-/* FLASHCARD PAGE */
-/* QUIZ PAGE */
+nav .title-text {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: #4165D1;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 80vh;
+    padding: 1rem;
+}
 
+main .container {
+    width: 400px;
+    height: 400px;
+    background-color: #4165D1;
+    box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.4);
+    border-radius: 25% 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+main h3 {
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: #fff;
+    margin: 1rem;
+    background-color: #4165D1;
+    z-index: 2;
+}
+
+main h2{
+    padding-bottom: 20px;
+}
+
+main .button {
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #212121;
+    border-style: none;
+    width: 175px;
+    height: 45px;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+
+main .button:hover {
+    background-color: #f0f0f0;
+    color: #4165D1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+main .button:active {
+    background-color: #f0f0f0;
+    color: #212121;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+    padding-bottom: 1rem;
+}
+
+footer h3 {
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    color: #aaa;
+}
+
+/* Background effect */
+body {
+    background: linear-gradient(135deg, #1a1a1a, #212121);
+}

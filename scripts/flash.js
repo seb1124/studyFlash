@@ -70,3 +70,5 @@ async function loadStoredText() {
     }
 }
 
+// Initialize on page load
+loadStoredText();

@@ -1,5 +1,8 @@
 // Function to read and parse the PDF file
 async function readPdf(file) {
+
+    localStorage.clear();
+
     const fileReader = new FileReader();
 
     fileReader.onload = async function() {

@@ -12,6 +12,7 @@ a{
     cursor: pointer;
     text-decoration: none;
 }
+
 /* UPLOAD PAGE */
 
 /* NAVBAR */
@@ -74,6 +75,12 @@ div .flashtext-div{
     width: 100%;
     background-color: rgba(255, 255, 255, 0);
     text-align: center;
+    padding: 5px;
+}
+
+div .flashcard-hint{
+    text-align: center;
+    padding: 5px;
 }
 
 div .refresh-div{

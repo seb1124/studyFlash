@@ -42,8 +42,7 @@ main .button {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin-top: px;
-    margin-left: 250px;
+    margin-left: 650px;
     word-break: break-word;
     border: 0;
     width: 300px;

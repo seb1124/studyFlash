@@ -41,3 +41,12 @@ document.querySelector("#forward-arrow").addEventListener("click", () => {
 });
 
 opneaiApiHandler("this is sami he has green hair and red eyebrows. Mark drives a bugatti.");
+// Load stored text on page load
+async function loadStoredText() {
+    const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage
+    if (storedText) {
+        console.log("Parsed PDF: " + storedText)
+        await opneaiApiHandler(storedText);
+    }
+}
+

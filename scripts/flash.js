@@ -1,5 +1,7 @@
 const apiBaseURL = "http://159.89.83.234/LAMPAPI";
 
+let curFlashcardIdx = 0;
+
 async function apiRequest(endpoint, method, body) {
     const response = await fetch(`${apiBaseURL}${endpoint}`, {
         method: method,
@@ -11,7 +13,7 @@ async function apiRequest(endpoint, method, body) {
     return await response.json();
 }
 
-async function talkToGpt(query = '') {
+async function opneaiApiHandler(query = '') {
     const searchBody = {
         pdfText: query
     };
@@ -19,29 +21,32 @@ async function talkToGpt(query = '') {
     const data = await apiRequest('/promptSend.php', 'POST', searchBody);
 
      if(data){
+         localStorage.setItem("data", data);
          displayFlashcards(data)
      }
 }
 
 function displayFlashcards(flashcards) {
-    const insert = document.getElementById('api-test');
-    insert.innerHTML = '';  // Clear the existing list
-
-
-    flashcards.forEach((flashcard) => {
-
-        const row = document.createElement('tr');
-        row.innerHTML = `
-           <td>${flashcard.question}</td>
-           <td>${flashcard.answer}</td>
-       `;
-        insert.appendChild(row);
-    });
-
-
+    document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].question;
+    document.querySelector("#flashcard-hint").innerHTML = flashcards[curFlashcardIdx].hint;
 }
 
-talkToGpt("Trump was born on June 14, 1946, at Jamaica Hospital in Queens, New York City,[1] the fourth child of Fred Trump and Mary Anne MacLeod Trump. He grew up with older siblings Maryanne, Fred Jr., and Elizabeth and younger brother Robert in the Jamaica Estates neighborhood of Queens, and attended the private Kew-Forest School from kindergarten through seventh grade.[2][3][4] At age 13, he entered the New York Military Academy, a private boarding school.[5] In 1964, he enrolled at Fordham University. Two years later, he transferred to the Wharton School of the University of Pennsylvania, graduating in May 1968 with a Bachelor of Science in economics.[6][7] In 2015, Trump's lawyer threatened Trump's col" +
-    "leges, his high school, and the College Board with legal action if they released his academic records.[8]");
+document.querySelector("#forward-arrow").addEventListener("click", () => {
+    const data = localStorage.getItem("data");
+    if(curFlashcardIdx + 1 < data.length){
+        console.log("current flashcard index is " + curFlashcardIdx);
+        curFlashcardIdx += 1;
+        displayFlashcards(data);
+    }
+});
 
+opneaiApiHandler("this is sami he has green hair and red eyebrows. Mark drives a bugatti.");
+// Load stored text on page load
+async function loadStoredText() {
+    const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage
+    if (storedText) {
+        console.log("Parsed PDF: " + storedText)
+        await opneaiApiHandler(storedText);
+    }
+}
 

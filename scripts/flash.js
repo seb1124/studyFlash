@@ -54,10 +54,12 @@ document.querySelector("#refresh").addEventListener("click", () => {
     if(toggle === 0) {
         toggle++;
         document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].answer;
+        document.querySelector("#flashcard-hint").classList.add("hidden");
     }
     else {
         toggle--;
         document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].question;
+        document.querySelector("#flashcard-hint").classList.remove("hidden");
     }
 });
 

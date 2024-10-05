@@ -76,3 +76,31 @@ footer h3 {
     padding-bottom: 0.5rem;
     color: #aaa;
 }
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav .title-text {
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    main .container {
+        width: 80%;
+        height: auto;
+        min-height: 500px;
+    }
+
+    main h2 {
+        font-size: 0.875rem;
+    }
+
+    footer h3 {
+        font-size: 0.875rem;
+    }
+}

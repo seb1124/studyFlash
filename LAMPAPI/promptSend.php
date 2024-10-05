@@ -59,24 +59,26 @@ function callOpenAI($apiKey, $model, $messages) {
     return json_decode($response, true);
 }
 
+function sendResultInfoAsJson( $obj ) {
+		header('Content-type: application/json');
+		echo $obj;
+}
+
 // Define the messages
 $messages = [
     ["role" => "system", "content" => "You are a helpful tutor. Generate flashcards based on the information provided."],
-    ["role" => "user", "content" => "Create flashcards based on this information: ". $input],
+    ["role" => "user", "content" => "Create flashcards in json format with question and answer values based on this information: ". $input],
 ];
 
 // Call the OpenAI API
 $completion = callOpenAI($apiKey, 'gpt-3.5-turbo', $messages);
 
-
-// Extract the flashcards if the response is valid
 if ($completion && isset($completion['choices'][0]['message']['content'])) {
     echo $completion['choices'][0]['message']['content'];
 } else {
     $http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    echo $http_status;
+    //echo $http_status;
     echo "API Error: " . $completion['error']['message'] . "\n";
-    echo "Error in response from OpenAI API.\n";
+    //echo "Error in response from OpenAI API.\n";
 }
-
 ?>

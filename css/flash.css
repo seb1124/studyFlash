@@ -93,12 +93,7 @@ div .refresh-div{
     padding-top: 5px;
 }
 
-.refresh-div a{
-    cursor: pointer;
-    padding: 1px;
-}
-
-.refresh-div a svg{
+.refresh-div svg{
     height: fit-content;
     width: 20px;
     color: #aaa;

@@ -34,9 +34,10 @@ function displayFlashcards(flashcards) {
 document.querySelector("#forward-arrow").addEventListener("click", () => {
     const data = localStorage.getItem("data");
     if(curFlashcardIdx + 1 < data.length){
+        console.log("current flashcard index is " + curFlashcardIdx);
         curFlashcardIdx += 1;
         displayFlashcards(data);
     }
 });
 
-opneaiApiHandler("this is sami he has green hair and red eyebrows");
+opneaiApiHandler("this is sami he has green hair and red eyebrows. Mark drives a bugatti.");

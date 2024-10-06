@@ -11,6 +11,7 @@
 a{
     cursor: pointer;
     text-decoration: none;
+    background-color: rgba(255, 255, 255, 0);
 }
 /* HOME PAGE */
 
@@ -67,6 +68,7 @@ main h3 {
     margin: 2.5rem;
     background-color: 0;
     z-index: 2;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 main h2{

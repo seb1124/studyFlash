@@ -1,116 +1,71 @@
-* {
+*{
     background-color: #212121;
     color: #FFFFFF;
     font-family: "Roboto", sans-serif;
     cursor: default;
     margin: 0px;
     padding: 0;
-}
-
-<<<<<<< Updated upstream
-main .title {
-<<<<<<< HEAD
-    font-size: 5rem; 
-=======
-    font-size: 3rem; 
-=======
-
-/* MAIN BODY */
-main{
-    height: 90vh;
-    width: 100%;
-}
-
-main .container{
-    width :200px; 
-    height: 200px; 
-    background-color: rgba(212, 199, 199, 0);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
->>>>>>> Stashed changes
->>>>>>> 61718e169d11c3b5698e0d0277f32d5966c3c829
-    text-align: center;
-    margin-bottom: 5px;
-    margin-top: 200px;
-    letter-spacing: .25rem;
-}
-
-main .logo {
-    font-size: 1rem;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 40px;
-    
-    
-    
-}
-
-main .button {
-    text-align: center;
-    background: #5E5DF0;
-    border-radius: 500px;
-    box-shadow: #5E5DF0 0 10px 20px -10px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-    opacity: 1;
-    outline: 0 solid transparent;
-    padding: 20px 20px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    margin-left: 650px;
-    word-break: break-word;
-    border: 0;
-<<<<<<< Updated upstream
-    width: 300px;
-}
-body{
-    align-items: center;
-}
-
-=======
-    width: 150px;
   }
   
->>>>>>> Stashed changes
-main .button:hover {
-    background-color: #f0f0f0;
-    color: #5E5DF0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-<<<<<<< Updated upstream
-
-=======
+  main .title {
+      font-size: 5rem; 
+      text-align: center;
+      margin-bottom: 5px;
+      margin-top: 200px;
+      letter-spacing: .25rem;
+  }
   
->>>>>>> Stashed changes
-main .button:active {
-    background-color: #f0f0f0;
-    color: #212121;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
-<<<<<<< Updated upstream
-
-=======
+  main .logo {
+      font-size: 1rem;
+      text-align: center;
+      font-style: italic;
+      margin-bottom: 40px;
   
-/* FOOTER */
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #212121;
-    padding-bottom: 1rem;
-    height: 10vh;
-}
-
-footer h3 {
-    font-size: 1rem;
-    padding-bottom: 0.5rem;
-    color: #aaa;
-}
->>>>>>> Stashed changes
+  
+  
+  }
+  
+  main .button {
+      text-align: center;
+      background: #5E5DF0;
+      border-radius: 500px;
+      box-shadow: #5E5DF0 0 10px 20px -10px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      opacity: 1;
+      outline: 0 solid transparent;
+      padding: 20px 20px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      margin-top: px;
+      margin-left: 650px;
+      word-break: break-word;
+      border: 0;
+      width: 300px;
+  }
+  body{
+      align-items: center;
+  }
+  
+  main .button:hover {
+      background-color: #f0f0f0;
+      color: #5E5DF0;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  main .button:active {
+      background-color: #f0f0f0;
+      color: #212121;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  footer{
+      padding-top:100px; 
+      padding-left:680px; 
+  }

@@ -40,6 +40,7 @@ main{
 
 .button-container{
     z-index: 2;
+    background-color: rgba(255, 255, 255, 0);
 }
 main .button {
     background: #5E5DF0;

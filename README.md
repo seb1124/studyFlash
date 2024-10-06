@@ -21,7 +21,7 @@ Our future goal for the project is to allow users to log in to save their flashc
 
 
 ## Our team
-Alexander (Front-end)
-Will (Front-end)
-Hector (Back-end)
-Sami (Back-end)
+* Alexander (Front-end)
+* Will (Front-end)
+* Hector (Back-end)
+* Sami (Back-end)

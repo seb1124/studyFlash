@@ -25,6 +25,12 @@ nav .title-text {
     z-index: 3;
 }
 
+nav a{
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+}
+
 nav a h1{
     cursor: pointer;
 }

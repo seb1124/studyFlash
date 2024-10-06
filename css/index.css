@@ -9,6 +9,9 @@
 
 <<<<<<< Updated upstream
 main .title {
+<<<<<<< HEAD
+    font-size: 5rem; 
+=======
     font-size: 3rem; 
 =======
 
@@ -27,6 +30,7 @@ main .container{
     align-items: center;
     flex-direction: column;
 >>>>>>> Stashed changes
+>>>>>>> 61718e169d11c3b5698e0d0277f32d5966c3c829
     text-align: center;
     margin-bottom: 5px;
     margin-top: 200px;
@@ -44,6 +48,7 @@ main .logo {
 }
 
 main .button {
+    text-align: center;
     background: #5E5DF0;
     border-radius: 500px;
     box-shadow: #5E5DF0 0 10px 20px -10px;
@@ -59,8 +64,7 @@ main .button {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin-top: px;
-    margin-left: 250px;
+    margin-left: 650px;
     word-break: break-word;
     border: 0;
 <<<<<<< Updated upstream

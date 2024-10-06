@@ -27,4 +27,4 @@ Our future goal for the project is to allow users to log in to save their flashc
 * Sami (Back-end)
 
 
-** This project was built for KnightHacks @ UCF 2024 **
+**This project was built for KnightHacks @ UCF 2024**

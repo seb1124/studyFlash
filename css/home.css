@@ -111,6 +111,16 @@ main .button:active {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+#WIP{
+    background-color: rgb(199, 189, 189); 
+    color: black; 
+    box-shadow: rgb(199, 189, 189) 0 10px 20px -10px;
+}
+
+#WIP:hover{
+    cursor: not-allowed;
+}
+
 /* FOOTER */
 footer {
     display: flex;

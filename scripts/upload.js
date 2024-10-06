@@ -19,7 +19,7 @@ async function readPdf(file) {
             const pageText = textContent.items.map(item => item.str).join(' ');
             fullText += pageText + '\n';
         }
-
+        console.log(fullText);
         localStorage.setItem("pdfText", fullText);
     };
 
@@ -27,12 +27,15 @@ async function readPdf(file) {
 }
 
 // Function to initialize event listeners
-function initializeListeners() {
-    document.getElementById('pdf-upload').addEventListener('change', function(event) {
+async function initializeListeners() {
+    document.getElementById('pdf-upload').addEventListener('change', async function (event) {
         const file = event.target.files[0];
         if (file && file.type === "application/pdf") {
-            readPdf(file);
-            window.location.href = 'flash.html';
+            await readPdf(file);
+            setTimeout(() => {
+                window.location.href = 'flash.html';
+            }, 200);
+
         } else {
             alert("Please upload a valid PDF file.");
         }
@@ -44,6 +47,9 @@ function loadStoredText() {
     const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage
     if (storedText) {
         console.log("Parsed PDF: " + storedText);
+    }
+    else{
+        console.log("storage failed");
     }
 }
 

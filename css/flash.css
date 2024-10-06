@@ -81,12 +81,20 @@ div .flashtext-div{
     width: 100%;
     background-color: rgba(255, 255, 255, 0);
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
 
 div .flashcard-hint{
     text-align: center;
     padding: 10px;
+}
+
+.flashcard-text{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.flashcard-hint{
+    background-color: rgba(255, 255, 255, 0);
 }
 
 div .refresh-div{

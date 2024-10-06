@@ -90,14 +90,14 @@ div .flashcard-hint{
     padding: 5px;
 }
 
-.flashcard-text{
+.flashtext-div h2{
     background-color: rgba(255, 255, 255, 0);
-    padding: 5px;
+    padding: 1px;
 }
 
-.flashcard-hint{
+.flashcard-hint h4{
     background-color: rgba(255, 255, 255, 0);
-    padding: 5px;
+    padding: 1px;
 }
 
 div .refresh-div{

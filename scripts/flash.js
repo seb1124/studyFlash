@@ -1,4 +1,4 @@
-const apiBaseURL = "http://159.89.83.234/LAMPAPI";
+const apiBaseURL = "http://studyflash.study/LAMPAPI";
 
 let curFlashcardIdx = 0;
 

@@ -5,6 +5,7 @@ let curFlashcardIdx = 0;
 let flashcards;
 
 let toggle = 0;
+let toggleHint = 0;
 
 async function apiRequest(endpoint, method, body) {
     const response = await fetch(`${apiBaseURL}${endpoint}`, {
@@ -17,7 +18,7 @@ async function apiRequest(endpoint, method, body) {
     return await response.json();
 }
 
-async function opneaiApiHandler(query = '') {
+async function openaiApiHandler(query = '') {
     const searchBody = {
         pdfText: query
     };
@@ -38,6 +39,7 @@ function displayFlashcards(flashcards) {
 
 document.querySelector("#forward-arrow").addEventListener("click", () => {
     if(curFlashcardIdx < flashcards.length - 1) {
+        revealHint();
         toggle = 0;
         curFlashcardIdx += 1;
         displayFlashcards(flashcards);
@@ -46,11 +48,18 @@ document.querySelector("#forward-arrow").addEventListener("click", () => {
 
 document.querySelector("#back-arrow").addEventListener("click", () => {
     if(curFlashcardIdx > 0) {
+        revealHint();
         toggle = 0;
         curFlashcardIdx -= 1;
         displayFlashcards(flashcards);
     }
 });
+
+function revealHint(){
+    document.querySelector("#flashcard-hint").classList.remove("hidden");
+    document.querySelector("#flashcard-hint").innerHTML = "Hint...";
+    toggleHint = 0;
+}
 
 document.querySelector("#refresh").addEventListener("click", () => {
     if(toggle === 0) {
@@ -65,12 +74,24 @@ document.querySelector("#refresh").addEventListener("click", () => {
     }
 });
 
+document.querySelector("#flashcard-hint").addEventListener("click", () => {
+    if(toggleHint === 0) {
+        toggleHint++
+        document.querySelector("#flashcard-hint").innerHTML = flashcards[curFlashcardIdx].hint;
+    }
+    else {
+        toggleHint--;
+        document.querySelector("#flashcard-hint").innerHTML = "Hint...";
+    }
+});
+
 // Load stored text on page load
 async function loadStoredText() {
     const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage
+    console.log(storedText);
     if (storedText) {
         console.log("Parsed PDF: " + storedText)
-        await opneaiApiHandler(storedText);
+        await openaiApiHandler(storedText);
     }
 }
 

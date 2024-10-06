@@ -32,6 +32,8 @@ async function opneaiApiHandler(query = '') {
 function displayFlashcards(flashcards) {
     document.querySelector("#flashcard-text").innerHTML = flashcards[curFlashcardIdx].question;
     document.querySelector("#flashcard-hint").innerHTML = flashcards[curFlashcardIdx].hint;
+    document.querySelector('.loader-container').style.display = 'none';
+    document.querySelector('.flash-container').style.display = 'flex';
 }
 
 document.querySelector("#forward-arrow").addEventListener("click", () => {

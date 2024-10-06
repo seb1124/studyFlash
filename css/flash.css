@@ -53,12 +53,12 @@ main div {
 }
 
 /* Flashcard box organizer */
-div .flash-container{
-    display: flex;
+.flash-container{
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: #5E5DF0;
+    background-color: rgba(255, 255, 255, 0);
     width: 500px;
     height: 500px;
 }
@@ -187,3 +187,24 @@ footer h3 {
         width: 2rem;
     }
 }
+
+/*     LOADER         */
+
+.loader-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    border: 16px solid  #aaa; /* Light grey */
+    border-top: 16px solid #5E5DF0; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

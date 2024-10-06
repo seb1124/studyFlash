@@ -31,6 +31,7 @@ function initializeListeners() {
     document.getElementById('pdf-upload').addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file && file.type === "application/pdf") {
+            localStorage.setItem('pdfData', JSON.stringify(file));
             readPdf(file);
             window.location.href = 'flash.html';
         } else {
@@ -44,6 +45,9 @@ function loadStoredText() {
     const storedText = localStorage.getItem("pdfText");  // Get the stored text from local storage
     if (storedText) {
         console.log("Parsed PDF: " + storedText);
+    }
+    else{
+        console.log("Storage failed");
     }
 }
 

@@ -91,12 +91,12 @@ div .flashcard-hint{
 
 .flashcard-text{
     background-color: rgba(255, 255, 255, 0);
-    padding: 5px;
+    padding: 1px;
 }
 
 .flashcard-hint{
     background-color: rgba(255, 255, 255, 0);
-    padding: 5px;
+    padding: 1px;
 }
 
 div .refresh-div{

@@ -31,11 +31,13 @@ async function initializeListeners() {
     document.getElementById('pdf-upload').addEventListener('change', async function (event) {
         const file = event.target.files[0];
         if (file && file.type === "application/pdf") {
-            localStorage.setItem('pdfData', JSON.stringify(file));
             await readPdf(file);
             setTimeout(() => {
+                if(localStorage.getItem("pdfText") === null)
+                    alert("Error reading file");
+                else
                 window.location.href = 'flash.html';
-            }, 200);
+            }, 500);
 
         } else {
             alert("Please upload a valid PDF file.");
